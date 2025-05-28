@@ -8,6 +8,10 @@
     scroll-behavior: smooth;
 }
 
+:root{
+    --bgOrange : #e84949 ;
+}
+
 
 #wrapper{
     height: 100vh;
@@ -66,3 +70,233 @@ a{
     text-decoration: none;
 }
 
+.hero-section{
+    width: 1200px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem auto ;
+    gap: 5rem ;
+    padding: 0 1rem ;
+    padding-bottom: 8rem;
+}
+
+.fadded-text{
+    user-select: none;
+    font-size: 7em;
+    color: rgb(231 , 231 , 231);
+    bottom: -16%;
+    left: -5%;
+    font-weight: bold;
+    transition: all  3s;
+}
+
+.hero-section-left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem ;
+}
+
+.hero-section-heading{
+    font-size: 35px;
+    color: #343d68;
+    font-weight: 500;
+}
+
+.role{
+    font-weight: 800;
+    color: #4e45d5;
+}
+
+.hero-section-sub-heading{
+    font-size: 45px;
+    line-height: 45px;
+}
+
+.hero-section-description{
+    margin-top: 1rem;
+    width: 80%;
+    font-weight: 500;
+}
+
+.btn-pink{
+    background-color: var(--bgOrange);
+    width: fit-content;
+    padding: 0.8rem 2.3rem;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    box-shadow: 5px 5px 7px 0 #0000003f;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.5s;
+    border: solid 3px transparent;
+    z-index: 1;
+}
+
+.btn-pink::before{
+    content: "";
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 0.8s;
+    z-index: -1;
+}
+
+.btn-pink:hover::before{
+    transform: scaleX(1);
+}
+
+.btn-pink:hover{
+    border: solid 3px var(--bgOrange);
+    color: black;
+}
+
+.hero-section-right{
+    position: relative;
+}
+
+.absolute{
+    position: absolute;
+}
+
+.user-image{
+    padding: 2.5rem;
+    filter: grayscale(1);
+    transition: all 1s;
+    animation: scaleImage 5s linear infinite;
+}
+
+.user-image img{
+    z-index: -5;
+    height: 300px;
+}
+
+@keyframes scaleImage {
+    0%{
+        filter: grayscale(0);
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+        filter: grayscale(1);
+        box-shadow: 3px 3px 10px black;
+    }
+    100%{
+        transform: scale(1);
+        filter: grayscale(0);        
+    }
+}
+
+.dots{
+    z-index: 9;
+    bottom: -1rem;
+    right: 0;
+    animation: dotAnimation 5s infinite;
+    & > img{
+        height: 100px;
+    }
+}
+
+@keyframes dotAnimation {
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-15px);
+    }
+    100%{
+        transform: translateY(0px);   
+    }
+}
+
+.cube{
+    z-index: 9;
+    top: -0.8em;
+    right: 1em ;
+    animation: cubeRotate 3s infinite;
+    & > img{
+        height: 50px;
+    }
+}
+
+@keyframes cubeRotate {
+    0%{
+        transform: rotateY(0deg) translateY(0px);
+    }
+    50%{
+        transform: rotateY(180deg) translateY(-15px);
+    }
+    100%{
+        transform: rotateY(360deg) translateY(0px);   
+    }
+}
+
+.circle{
+    z-index: 9;
+    left: 0;
+    bottom: 0;
+    animation: shakeEffect 6s linear infinite;
+    & > img{
+        height: 25px;
+    }
+}
+
+@keyframes shakeEffect {
+    0%{
+        left: 0 ;
+        bottom: 0;
+    }
+    50%{
+        left: 5% ;
+        bottom: 10%;
+    }
+    100%{
+        left: 0 ;
+        bottom: 0;   
+    }
+}
+
+.zig-zag{
+    z-index: 9;
+    top: 1.5em;
+    left: -0.3em;
+    rotate: 90deg;
+    animation: zigzaganimation 5s ease-in infinite;
+    & > img{
+        height: 100px;
+    }
+}
+
+@keyframes zigzaganimation {
+    
+    50%{
+        left: 5% ;
+        top: 2%;
+    }
+    
+}
+
+.cross{
+    z-index: 9;
+    top: -0.8em;
+    left: 50%;
+    animation: crossAnimation 5s ease-in infinite;
+    & > img{
+        height: 30px;
+    }
+}
+
+@keyframes crossAnimation {
+    50%{
+        top: 3%;
+        left: 48%;
+    }
+}
