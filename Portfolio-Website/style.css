@@ -467,3 +467,83 @@ a{
 .project-card:hover .project-content{
     transform: scale(1.1);
 }
+
+.skills-container{
+    position: relative;
+    display: flex;
+    padding: 5rem;
+    margin: 10rem auto;
+    gap: 30px;
+}
+
+.skill-container-left{
+    width: 50%;
+    display: flex;
+    flex-direction: column;    
+}
+
+.skill-container-right{
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    position: relative;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.skill-fade-text{
+    position: absolute;
+    font-size: 15em ;
+    font-weight: bold;
+    color: rgb(231 , 231 , 231);
+    bottom: -34.5%;
+    right: 0%;
+    user-select: none;
+}
+
+.blob-style{
+    position: absolute;
+    top: 50% ;
+    left: 50%;
+    z-index: -1 ;
+    transform: scale(0.5) translate(-100% , -100%);
+    animation: blobAnimate 3s linear infinite;
+}
+
+@keyframes blobAnimate {
+    50%{
+        top:54% ;
+        left:46% ;
+    }
+}
+
+.skills-logo{
+    height: 80px;
+    width: 90px;
+    transition: all 0.5s;
+}
+
+.skills-logo:hover{
+    transform: scale(1.1);
+}
+
+.skill-heading{
+    font-size: 50px;
+    font-style: bold;
+    color: var(--bgOrange);
+    line-height: 50px;
+}
+
+.caps{
+    font-size: 90px;
+}
+
+.skill-subheading{
+    margin-top: 1rem;
+    width: 85%;
+    text-align: justify;
+}
+
+.skill-subheading p{
+    margin: 15px 0 ;
+}
