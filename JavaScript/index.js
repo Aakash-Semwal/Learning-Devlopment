@@ -1,19 +1,9 @@
-function createRectangle(){
-    return rectangle = {
-        length : 1 ,
-        breadth : 2 ,
-
-        draw(){
-            console.log("Draw a Rectangle");
-        }
-    };
+let sum = function(){
+    let total = 0 ;
+    for(let value of arguments)
+        total += value ;
+    return total;
 }
 
-let rectangleObj1 = createRectangle() ;
-
-if('length' in rectangleObj1){
-    console.log('Yes');
-}
-else{
-    console.log('NO');
-}
+let ans = sum(1 , 2 , 3 , 4 , 5 , 6);
+console.log(ans);
