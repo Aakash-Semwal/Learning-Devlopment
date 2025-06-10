@@ -1,9 +1,6 @@
-let sum = function(){
-    let total = 0 ;
-    for(let value of arguments)
-        total += value ;
-    return total;
-}
+let element = document.querySelector('#wrapper');
 
-let ans = sum(1 , 2 , 3 , 4 , 5 , 6);
-console.log(ans);
+element.addEventListener('click', function(event){
+    if(event.target.nodeName === 'SPAN')
+        console.log("Span is clicked " + event.target.textContent);
+})
