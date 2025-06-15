@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password Generator</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="container">
     <h1>Password Generator</h1>
     <div class="display-password">
         <input type="text" readonly placeholder="Password" class="password-displayer" data-passwordDisplay>
-        <button data-copy>
-            <span data-copyMsg></span>
-            <i class="fa-regular fa-copy"></i>
+        <button class="cpyBtn" data-copy>
+            <span class="tooltip" data-copyMsg></span>
+            <img src="content_copy_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="">
         </button>
         
     </div>
@@ -30,22 +30,22 @@
         <input type="range" min="1" max="20" step="1" class="slider" data-lengthSlider>
 
         <!-- Checkbox -->
-        <div>
+        <div class="check">
             <input type="checkbox" id="Uppercase">
             <label for="Uppercase">Includes Uppercase Characters</label>
         </div>
 
-        <div>
+        <div class="check">
             <input type="checkbox" id="Lowercase">
             <label for="Lowercase">Includes Lowercase Characters</label>
         </div>
 
-        <div>
+        <div class="check">
             <input type="checkbox" id="Number">
             <label for="Number">Includes Numbers</label>
         </div>
 
-        <div>
+        <div class="check">
             <input type="checkbox" id="Symbols">
             <label for="Symbols">Includes Symbols</label>
         </div>
@@ -53,7 +53,7 @@
         <!-- Strength -->
         <div class="strength-container">
             <p>Strength</p>
-            <div data-indicator></div>
+            <div class="indicator" data-indicator></div>
         </div>
 
         <!-- Generate Password -->

@@ -16,16 +16,22 @@ let password = "";
 let passwordLength = 10;
 let checkCount = 1 ;
 uppercaseCheck.checked = true;
+handleSlider();
+
+setIndicator("#ccc");
 
 // set password length
 function handleSlider(){
     inputSlider.value = passwordLength;
     lengthDisplay.innerText = passwordLength;
-
+    const min = inputSlider.min;
+    const max = inputSlider.max;
+    inputSlider.style.backgroundSize = ((passwordLength - min)*100 / (max - min)) + "% 100%";
 }
 
 function setIndicator(color){
     indicator.style.backgroundColor = color;
+    indicator.style.boxShadow = `0px 0px 12px 1px ${color}`;
 }
 
 function getRandomInt(min, max){
